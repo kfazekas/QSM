@@ -1,0 +1,163 @@
+tla-consensus:
+  path: tla/ivy/Consensus.ivy
+  size:
+    value:
+      from: 2
+      to: 3
+
+tla-tcommit:
+  path: tla/ivy/TCommit.ivy
+  size:
+    resource_manager:
+      from: 2
+      to: 2
+
+tla-twophase:
+  path: tla/ivy/TwoPhase.ivy
+  size:
+    resource_manager:
+      from: 2
+      to: 2
+
+distai-RAgrawala:
+  path: distai/ivy/Ricart-Agrawala.ivy
+  size:
+    node:
+      from: 2
+      to: 2
+
+i4-lock-server:
+  path: i4/ivy/lock_server.ivy
+  size:
+    server:
+      from: 1
+      to: 2
+    client:
+      from: 2
+      to: 3
+
+pyv-sharded-kv:
+  path: mypyv/ivy/sharded_kv.ivy
+  size:
+    node:
+      from: 2
+      to: 3
+    key:
+      from: 2
+      to: 2
+    value:
+      from: 2
+      to: 3
+
+pyv-sharded-kv-no-lost-keys:
+  path: mypyv/ivy/sharded_kv_no_lost_keys.ivy
+  size:
+    node:
+      from: 2
+      to: 3
+    key:
+      from: 2
+      to: 2
+    value:
+      from: 2
+      to: 3
+
+ex-simple-decentralized-lock:
+  path: ex/ivy/simple-decentralized-lock.ivy
+  size:
+    node:
+      from: 2
+      to: 4
+
+pyv-firewall:
+  path: mypyv/ivy/firewall.ivy
+  size:
+    node:
+      from: 2
+      to: 3
+
+pyv-lockserv:
+  path: mypyv/ivy/lockserv.ivy
+  size:
+    node:
+      from: 2
+      to: 3
+
+ex-lockserv-automaton:
+  path: ex/ivy/lockserv_automaton.ivy
+  size:
+    node:
+      from: 2
+      to: 3
+
+ex-toy-consensus:
+  path: ex/ivy/toy_consensus.ivy
+  size:
+    quorum:
+      superset: "node"
+    node:
+      from: 2
+      to: 4
+    value:
+      from: 2
+      to: 3
+
+ex-naive-consensus:
+  path: ex/ivy/naive_consensus.ivy
+  size:
+    node:
+      from: 3
+      to: 4
+    quorum:
+      superset: "node"
+    value:
+      from: 3
+      to: 3
+
+ex-simple-election:
+  path: ex/ivy/simple-election.ivy
+  size:
+    acceptor:
+      from: 2
+      to: 3
+    quorum:
+      superset: "acceptor"
+    proposer:
+      from: 2
+      to: 3
+
+pyv-toy-consensus-forall:
+  path: mypyv/ivy/toy_consensus_forall.ivy
+  size:
+    quorum:
+      superset: "node"
+    node:
+      from: 2
+      to: 4
+    value:
+      from: 2
+      to: 3
+
+pyv-toy-consensus-epr:
+  path: mypyv/ivy/toy_consensus_epr.ivy
+  size:
+    quorum:
+      superset: "node"
+    node:
+      from: 2
+      to: 3
+    value:
+      from: 2
+      to: 3
+
+pyv-consensus-epr:
+  path: mypyv/ivy/consensus_epr.ivy
+  size:
+    quorum:
+      superset: "node"
+    node:
+      from: 2
+      to: 4
+    value:
+      from: 2
+      to: 3
