@@ -24,6 +24,8 @@ $(OBJDIR)/qs_minimizer.o : $(SRCDIR)/qs_minimizer.cpp $(SRCDIR)/qs_minimizer.h
 $(OBJDIR)/coverage_counter.o : $(SRCDIR)/coverage_counter.cpp $(SRCDIR)/coverage_counter.h 
 	g++ $(FLAGS) $(STANDARD) -I$(CADICAL_INC) -c $< -o $@
 
+$(shell   mkdir -p $(OBJDIR))
+
 #.PHONY : clean
 clean:
 	rm -f *.a $(OBJDIR)/*.o *~ *.out  $(OBJDIR)/qsm

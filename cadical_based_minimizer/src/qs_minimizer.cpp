@@ -23,6 +23,10 @@ void QSMinimizer::setup_cadical() {
     std::cout << "c Initializing CaDiCaL ";
     solver = new CaDiCaL::Solver;
     solver->set("inprocessing",0);
+    // These options are for CaDiCaL >=2.0:
+    solver->set("ilb",0);
+    solver->set("reimply",0);
+    solver->set("ilbassumptions",0);
     std::cout << "(version " << solver->version() << ")." << std::endl;
     
     
@@ -343,7 +347,7 @@ void QSMinimizer::evaluate_solution () {
         best_cost = current_cost;
         std::cout << "c IMPROVED solution was found. Length: ";
         std::cout << new_solution.size() << " cost: " << best_cost << std::endl;
-    } else if (current_cost == best_cost && all_solutions) {
+    } else if (current_cost == best_cost && (all_solutions || !best_solutions.size())) {
         std::vector<int> new_solution {ptrail};
         best_solutions.push_back(new_solution);
         std::cout << "c another solution was found. Length: ";
@@ -387,6 +391,7 @@ void QSMinimizer::solve () {
     assign_covered ();
     if (!unassigned) {
         std::cout << "c All PIs are assigned on root-level, no search started." << std::endl;
+        evaluate_solution ();
         print_solution ();
     }
     // bool changed;
