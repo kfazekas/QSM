@@ -19,8 +19,8 @@ from symmetry import DomainSymmetryHandler
 
 from pysat.formula import  CNF # type: ignore
 from pysat.card import ITotalizer # type: ignore
-from pysat.solvers import Solver, Glucose4 # type: ignore
-from pysat.solvers import Cadical153 as Cadical # type: ignore
+from pysat.solvers import Solver, Glucose4, Cadical # type: ignore
+#from pysat.solvers import Cadical153 as Cadical # type: ignore
 
 class DualEncoder():
     def __init__(self, atom_strs: List[str]) -> None:

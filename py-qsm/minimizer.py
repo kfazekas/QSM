@@ -352,13 +352,15 @@ def main ():
             has_qform = (len(all_pis) > 0 and all_pis[0].qcost != 0)
             for pic in all_pis:
                 if has_qform:
-                    picfile.write("{};{};{}; {}\n".format(\
-                        pic.id,pic.qcost,\
-                        ' '.join([str(lit) for lit in pic.repr_pi.care]),\
-                        pic.quantified_form)) 
+                    has_all_const_flag = 1 if pic.has_all_const else 0
+                    picfile.write("{};{};{};{};{}; {}\n".format(\
+               	        pic.id,pic.qcost,\
+               	        ' '.join([str(lit) for lit in pic.repr_pi.care]),\
+               	        pic.has_const, \
+               	        has_all_const_flag,\
+               	        pic.quantified_form))
                 else:
-                    picfile.write("{};{};{}; {}\n".format(\
-                        pic.id,pic.cost,\
+                    picfile.write("{};{};{}; {}\n".format(pic.id,pic.cost,\
                         ' '.join([str(lit) for lit in pic.repr_pi.care]),\
                         "none")) 
                     

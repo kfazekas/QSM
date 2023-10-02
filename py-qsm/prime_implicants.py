@@ -104,7 +104,7 @@ class PIClass():
         self.decided = False
 
         self.cost = 0
-        self.has_const = False
+        self.has_const = 0
         self.has_all_const = False
         self.coverage = 0
         
@@ -119,7 +119,7 @@ class PIClass():
         self.has_all_const = True
         for lit,(pred,args) in zip(self.repr_pi.all_literals,PIClass._atoms):
             if lit != '-' and len(args) == 0:
-                self.has_const = True
+                self.has_const = self.has_const + 1
             elif lit != '-' and len(args) != 0:
                 self.has_all_const = False
 
