@@ -111,7 +111,7 @@ def main():
         sys.exit(1)
 
     log_path = sys.argv[1]
-    files = glob.iglob(log_path + '/*/min-*.log', recursive=True)
+    files = glob.iglob(log_path + '/*/*/min-*.log', recursive=True)
     
     data = {}
     for f in files:

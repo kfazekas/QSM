@@ -89,7 +89,7 @@ with open(instance_path,'r') as yaml_file:
 
             log_path = "{}/{}/min-{}.log".format(output_dir,name,name)
             err_path = "{}/{}/min-{}.err".format(output_dir,name,name)
-            dimacs_path = "{}/{}/{}.dimacs".format(output_dir,name,name)
+            dimacs_path = "{}/{}/{}.cnf".format(output_dir,name,name)
             orbit_info = "{}/{}/{}_qcosts.txt".format(output_dir,name,name)
 
             spl = shlex.split("{} --time-limit={} --real-time-limit={} --space-limit={} python3.10 {}/minimizer.py {} {} --pi-weights={} --print-dimacs={} --print-classinfo={} --all-solutions".format(runlim_path,T,R,S,minimizer_path,ivy_path,pla_path,qpi_path,dimacs_path,orbit_info))
