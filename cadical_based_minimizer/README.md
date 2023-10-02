@@ -14,3 +14,6 @@ To try it out, run the following command:
 
 To generate the necessary cnf and pic files, see the options --print-dimacs and
 --print-classinfo of py-qsm/minimizer.py.
+Note that to print this information, the py-qsm minimizer does not have to be
+able to finish minimization. The CNF encoding and the quantified costs are just
+the inputs of the minimization problem.
